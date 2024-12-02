@@ -661,8 +661,8 @@ void play_game(char *word, Question questions[], int difficulty) {
             tries++;
             correct_streak = 0;
             incorrect_streak++;
-            printf("Incorrect streak: %d\n", incorrect_streak);
         } else if (correct) {
+            printf("Correct answer!\n");
             printf("Correct answer!\n");
             for (int i = 0; i < word_len; i++) {
                 if (guessed[i] == '_') {
@@ -690,7 +690,7 @@ void play_game(char *word, Question questions[], int difficulty) {
 
         if (strcmp(word, guessed) == 0) {
             print_winning_screen(word, score);
-            playSound("assets/Applause audio.wav"); // Play applause sound on winning
+            playSound("Applause audio.wav"); // Correct the file name
             return;
         }
     }
@@ -699,7 +699,7 @@ void play_game(char *word, Question questions[], int difficulty) {
         print_hangman(tries);
         print_game_over_screen(word);
         printf("Your score: %d\n", score);
-        playSound("assets/loser audio.wav"); // Play loser sound on losing
+        playSound("loser audio.wav"); // Correct the file name
     }
 }
 
