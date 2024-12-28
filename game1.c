@@ -112,7 +112,7 @@ void playSound(const char* soundFile) {
         return;
     }
     if (PlaySound(TEXT(soundPath), NULL, SND_FILENAME | SND_SYNC)) {
-        printf("Sound played successfully: %s\n", soundPath);
+        // printf("Sound played successfully: %s\n", soundPath); // Remove this line
     } else {
         printf("Failed to play sound: %s (Error code: %lu)\n", soundPath, GetLastError());
     }
@@ -663,7 +663,6 @@ void play_game(char *word, Question questions[], int difficulty) {
             incorrect_streak++;
         } else if (correct) {
             printf("Correct answer!\n");
-            printf("Correct answer!\n");
             for (int i = 0; i < word_len; i++) {
                 if (guessed[i] == '_') {
                     guessed[i] = word[i];
@@ -761,16 +760,15 @@ void print_winning_screen(const char* word, int score) {
 
 void print_rules() {
     const char* rules[] = {
-        "1. You will be asked questions",
-        "2. You have to guess the word",
-        "3. Answer correctly to reveal a letter in the blank to reveal the word",
-        "4. Choose the correct MCQ using A, B, C, or D",
-        "5. Choose the difficulty level (1: Easy, 2: Medium, 3: Hard)",
-        "6. You have 10 tries to guess the word",
-        "7. After 3 incorrect answers, a hint will be provided",
-        "8. Press 'X' to pause the game",
-        "9. Press 'ENTER' to continue",
-        "10. The game is over if the man is fully hanged"
+        "1. You will be asked Multiple Choice Questions (MCQs)",
+        "2. Answer correctly to reveal a letter in the blank to reveal the word",
+        "3. Choose the correct MCQ using A, B, C, or D",
+        "4. Choose the difficulty level (1: Easy, 2: Medium, 3: Hard)",
+        "5. You have 10 tries to guess the word",
+        "6. After 3 incorrect answers, a hint will be provided",
+        "7. Press 'X' to pause the game",
+        "8. Press 'ENTER' to continue the game",
+        "9. The game is over if the man is fully hanged"
     };
     int num_rules = sizeof(rules) / sizeof(rules[0]);
 
